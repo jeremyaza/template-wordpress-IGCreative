@@ -1,0 +1,349 @@
+.site-header {
+  /* background-color: rgb(82, 82, 82); */
+  background: transparent;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  box-shadow: none;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-header a {
+  color: white;
+}
+
+.site-branding h1 {
+  font-size: 1.3rem;
+}
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+  background-color: violet;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 37.5em) {
+  .site-header{
+    position: absolute;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .main-navigation {
+    line-height: 0;
+  }
+}
+
+.main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+
+.main-navigation ul ul a {
+  width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+
+.main-navigation li {
+  position: relative;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+button {
+  line-height: 0 !important;
+}
+
+/* Icon Menu */
+.bars {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bars .bar {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.bars .bar:nth-child(2) {
+  width: 70%;
+}
+
+/* Toogle menu */
+.main-navigation.toggled {
+  position: relative;
+}
+
+.main-navigation.toggled .menu-test-container {
+  display: block;
+  line-height: 1.5;
+  background-color: rgb(151, 113, 113);
+  color: #333;
+  position: absolute;
+  right: 100%;
+  min-width: 73vh;
+  min-height: 100vh;
+}
+
+.main-navigation.toggled ul {
+  display: block;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1.5;
+  background-color: rgb(151, 113, 113);
+  color: #333; */
+} 
+
+.main-navigation.toggled a{
+  color: #333;
+}
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+  display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: end;
+  flex: 1 0 50%;
+}
+
+/* Custom header */
+.has-header-media:not(.home) .custom-header {
+  position: relative;
+}
+
+.custom-header {
+  /* background-color: #6439e0; */
+  background-image: linear-gradient(90deg, #6f47e9 0, #e433b5);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-header:before {
+  /* background-color: #6439e0;
+  background-image: linear-gradient(90deg, #6439e0 0, #e120ae); */
+  content: "";
+  position: absolute;
+  display: block;
+  left: 90%;
+  top: 80%;
+  transform: translateY(-80%) translateX(-90%);
+  height: 80%;
+  width: 50%;
+}
+
+.custom-header .post-thumbnail {
+  margin: 0;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.custom-header-media {
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.custom-header-content {
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  text-align: left;
+  width: 100%;
+  min-height: 100vh;
+  /* z-index: 9; */
+}
+
+.custom-header-content .entry-header {
+  background: transparent;
+  padding: 0;
+  color: white;
+}
+
+.custom-header-content .entry-container .entry-header .entry-title {
+  font-size: 2.4rem;
+  padding: 0.5rem 0;
+}
+
+.custom-header-content .entry-container .entry-summary {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 1.4rem;
+}
+
+/* Trapezoid */
+i.trapezoid {
+  /* background-color: white; */
+  border-bottom: 150px solid #fff;
+  width: 50%;
+  height: 0;
+  margin-left: 0;
+  display: block;
+  position: absolute;
+  border-right: 25vw solid transparent;
+  border-left: 75vw solid transparent;
+  bottom: 0;
+}
+
+/* See more */
+.custom-header-content .entry-container .entry-summary > a {
+  z-index: 2;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  align-self: flex-start;
+  border-radius: 100px;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.1rem;
+  margin-top: 1.8rem;
+  font-weight: 600;
+}
+
+.custom-header-content .entry-container .entry-summary > a::before {
+  content: "";
+  transition: all 0.6s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-radius: 100px;
+  z-index: -1;
+}
+
+.custom-header-content .entry-container .entry-summary > a:hover {
+  color: #6439e0;
+  background-color: white;
+  -webkit-transition: 0.3s color, 0.1s 0.6s background;
+  -moz-transition: 0.3s color, 0.1s 0.6s background;
+  -ms-transition: 0.3s color, 0.1s 0.6s background;
+  -o-transition: 0.3s color, 0.1s 0.6s background;
+  transition: 0.3s color, 0.1s 0.6s background;
+}
+
+.custom-header-content .entry-container .entry-summary > a:hover::before {
+  left: 0;
+}
+
+body:not(.home) .custom-header-content {
+  padding: 60px;
+}
+
+/* Background Image */
+.header-media-text-disabled .custom-header .wp-custom-header img {
+  display: block;
+  position: relative;
+}
+
+.has-header-media .custom-header .wp-custom-header img {
+  display: none;
+}
+/* 
+.scroll-down {
+  position: absolute;
+  bottom: 49px;
+  cursor: pointer;
+  left: 50%;
+  line-height: 1;
+  z-index: 999;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.3s;
+} */

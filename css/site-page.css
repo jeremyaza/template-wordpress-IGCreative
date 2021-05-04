@@ -1,0 +1,21 @@
+/* .home .custom-header-content .entry-container{
+  max-width: 530px !important;
+} */
+
+.site-main {
+  padding-bottom: 1.5rem;
+}
+
+.entry-header {
+  /* background-color: #6439e0; */
+  /* background-image: linear-gradient(90deg, #6439e0 0, #e120ae); */
+  padding-left: 3rem;
+  padding-right: 2rem;
+  padding-top: 3rem;
+}
+
+.entry-content {
+  padding-left: 3rem;
+  padding-right: 2rem;
+}
+
