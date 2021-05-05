@@ -20,8 +20,9 @@
   font-size: 1.3rem;
 }
 
-/* Navigation
---------------------------------------------- */
+/* --------------
+  Navigation
+-------------- */
 .main-navigation ul {
   display: none;
   list-style: none;
@@ -36,12 +37,12 @@
   top: 100%;
   left: -999em;
   z-index: 99999;
-  background-color: violet;
+  background-color: rgb(238, 130, 130);
   line-height: 1.5;
 }
 
-@media screen and (max-width: 37.5em) {
-  .site-header{
+@media screen and (max-width: 47.5em) {
+  .site-header {
     position: absolute;
     background: transparent !important;
     box-shadow: none !important;
@@ -51,24 +52,35 @@
   }
 }
 
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
+@media (max-width: 47.5em) and (min-width: 37.5em) {
+  .site-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
-.main-navigation ul ul li:hover > ul,
+/*-------------
+  Main navigation - ajustes generales
+  ------------- */
+
+/* .main-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+} */
+
+/* .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
   display: block;
   left: auto;
-}
+} */
+
+/* .main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+} */
 
 .main-navigation ul ul a {
   width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
 }
 
 .main-navigation li {
@@ -82,7 +94,9 @@
   text-decoration: none;
 }
 
-/* Small menu. */
+/*---------------
+Small menu
+-------------- */
 .menu-toggle {
   background-color: transparent;
   border: none;
@@ -99,7 +113,9 @@ button {
   line-height: 0 !important;
 }
 
-/* Icon Menu */
+/*-------------- 
+Icon Menu
+-------------- */
 .bars {
   width: 100%;
   height: 100%;
@@ -118,37 +134,108 @@ button {
   width: 70%;
 }
 
-/* Toogle menu */
+/*--------------
+ Toogle menu 
+ ---------------*/
+
+/*Hidden scroll body when actived toggle menu*/
+.hidden_scroll_body_template {
+  overflow: hidden;
+}
+
 .main-navigation.toggled {
   position: relative;
 }
 
 .main-navigation.toggled .menu-test-container {
+  overflow: auto;
   display: block;
   line-height: 1.5;
-  background-color: rgb(151, 113, 113);
-  color: #333;
+  background-color: #fff;
   position: absolute;
-  right: 100%;
-  min-width: 73vh;
-  min-height: 100vh;
+  margin-top: 1.2rem;
+  top: 100%;
+  right: -135%;
+  /* min-width: calc(100vw - 40px) ; */
+  min-width: 100vw;
+  min-height: 86vh;
+  height: 100%;
 }
 
-.main-navigation.toggled ul {
-  display: block;
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 1.5;
-  background-color: rgb(151, 113, 113);
-  color: #333; */
-} 
+/* Responsive  - container menu toogle*/
+@media (max-width: 47.5em) and (min-width: 37.5em) {
+  .main-navigation.toggled .menu-test-container {
+    margin-top: 1rem !important;
+  }
+}
 
-.main-navigation.toggled a{
+.main-navigation.toggled .menu-test-container ul {
+  display: block;
+  padding-bottom: 1.5rem;
+}
+
+.main-navigation.toggled .menu-test-container ul li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+}
+
+/* .main-navigation.toggled .menu-test-container ul li:hover {
+  background-color: springgreen;
+} */
+
+/*--------------
+ Submenus 
+ --------------*/
+.click-open-submenu {
+  background-color: slateblue !important;
+  display: block !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  padding: 1rem 0 !important;
+  left: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.rotate-arrow{
+  background-color: #cbc7da;
+}
+
+.main-navigation.toggled .menu-test-container ul .menu-item-has-children::after {
+  content: "∧";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: springgreen;
+  cursor: pointer;
+}
+
+.main-navigation.toggled .menu-test-container ul ul {
+  background-color: slateblue;
+}
+
+.main-navigation.toggled a {
   color: #333;
 }
 
-@media screen and (min-width: 37.5em) {
+/* min-width 37.5em (16px * 37.5em = 360px) corresponde a los dispositivos moviles de 360px maximo de ancho de pantalla */
+/* @media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+} */
+
+/* Esta media querie corresponde a dispositivos moviles (vista en horizontal y vertical). La operacion es la siguiente 16px * 47.5em = 760px */
+@media screen and (min-width: 47.5em) {
   .menu-toggle {
     display: none;
   }
@@ -158,6 +245,9 @@ button {
   }
 }
 
+/* --------------
+Site main
+-------------- */
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -183,7 +273,10 @@ button {
   flex: 1 0 50%;
 }
 
-/* Custom header */
+/* --------------
+  Custom header 
+--------------*/
+
 .has-header-media:not(.home) .custom-header {
   position: relative;
 }
@@ -262,9 +355,8 @@ button {
 
 /* Trapezoid */
 i.trapezoid {
-  /* background-color: white; */
   border-bottom: 150px solid #fff;
-  width: 50%;
+  width: 100%;
   height: 0;
   margin-left: 0;
   display: block;
@@ -272,6 +364,7 @@ i.trapezoid {
   border-right: 25vw solid transparent;
   border-left: 75vw solid transparent;
   bottom: 0;
+  z-index: 0;
 }
 
 /* See more */
@@ -304,7 +397,9 @@ i.trapezoid {
   z-index: -1;
 }
 
-.custom-header-content .entry-container .entry-summary > a:hover {
+.custom-header-content .entry-container .entry-summary > a:hover,
+.custom-header-content .entry-container .entry-summary > a:active,
+.custom-header-content .entry-container .entry-summary > a:focus {
   color: #6439e0;
   background-color: white;
   -webkit-transition: 0.3s color, 0.1s 0.6s background;
@@ -314,7 +409,9 @@ i.trapezoid {
   transition: 0.3s color, 0.1s 0.6s background;
 }
 
-.custom-header-content .entry-container .entry-summary > a:hover::before {
+.custom-header-content .entry-container .entry-summary > a:hover::before,
+.custom-header-content .entry-container .entry-summary > a:active::before,
+.custom-header-content .entry-container .entry-summary > a:focus::before {
   left: 0;
 }
 
@@ -331,6 +428,7 @@ body:not(.home) .custom-header-content {
 .has-header-media .custom-header .wp-custom-header img {
   display: none;
 }
+
 /* 
 .scroll-down {
   position: absolute;
@@ -347,3 +445,51 @@ body:not(.home) .custom-header-content {
   text-decoration: none;
   transition: opacity 0.3s;
 } */
+
+/*
+Responsive header custom
+*/
+
+@media screen and (max-width: 37.5em) {
+  .custom-header-content .entry-container .entry-header .entry-title {
+    font-size: 1.5rem;
+  }
+  .custom-header-content .entry-container .entry-summary {
+    font-size: 1rem;
+  }
+
+  .custom-header-content .entry-container .entry-summary a {
+    font-size: 0.9rem;
+  }
+
+  /* Background Image */
+  .custom-header::before {
+    display: none;
+  }
+
+  /* Trapezoid */
+  i.trapezoid {
+    border-bottom: 100px solid #fff;
+  }
+}
+
+@media (max-width: 47.5em) and (min-width: 37.5em) {
+  .custom-header-content .entry-container .entry-header .entry-title {
+    font-size: 1.5rem;
+  }
+  .custom-header-content .entry-container .entry-summary {
+    font-size: 1rem;
+  }
+  .custom-header-content .entry-container .entry-summary a {
+    font-size: 0.95rem;
+  }
+  /* Width main container */
+  .home .custom-header-content .entry-container {
+    max-width: 350px !important;
+  }
+
+  /* Trapezoid */
+  i.trapezoid {
+    border-bottom: 100px solid #fff;
+  }
+}
