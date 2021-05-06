@@ -67,8 +67,12 @@
         itemHasChildren[i].addEventListener("click", () => {
           if (!submenus[j].classList.contains("click-open-submenu")) {
             submenus[j].classList.add("click-open-submenu");
+            itemHasChildren[i].style.setProperty("--deg-icon-arrow", "0deg");
+            // itemHasChildren[i].style.setProperty("border-bottom", "1px solid #4f4d4d");
           } else {
             submenus[j].classList.remove("click-open-submenu");
+            itemHasChildren[i].style.setProperty("--deg-icon-arrow", "180deg");
+            //itemHasChildren[i].style.setProperty("border-bottom", "none");
           }
         });
       }
