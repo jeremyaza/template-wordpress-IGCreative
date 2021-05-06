@@ -6,9 +6,9 @@ window.onscroll = function () {
 function scrollNavbarMain() {
   //Get the site-navigation
   const siteNavigation = document.getElementById("site-navigation");
-  const menu = siteNavigation.getElementsByTagName("ul")[0];
+  const menu = siteNavigation.querySelector(".menu");
   // Get all the link elements within the menu.
-  const links = menu.getElementsByTagName("a");
+  const links = menu.querySelectorAll("li > a");
 
   const navbarTop = document.getElementById("masthead");
   const logo = document.querySelector(".link_menu_scroll");
