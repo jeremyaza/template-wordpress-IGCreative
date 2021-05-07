@@ -9,7 +9,7 @@
 .site-header {
   /* background-color: rgb(82, 82, 82); */
   background: transparent;
-  padding: 1.5rem 3rem 1.5rem 3rem;
+  padding: 0rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,7 +44,6 @@
   top: 100%;
   left: -999em;
   z-index: 99999;
-  background-color: rgb(238, 130, 130);
   line-height: 1.5;
 }
 
@@ -53,6 +52,7 @@
     position: absolute;
     background: transparent !important;
     box-shadow: none !important;
+    padding: 1.5rem 3rem !important;
   }
   .main-navigation {
     line-height: 0;
@@ -61,8 +61,8 @@
 
 @media (max-width: 47.5em) and (min-width: 37.5em) {
   .site-header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -93,7 +93,7 @@
 .main-navigation li {
   position: relative;
   font-size: 1rem;
-  margin: 0 1rem;
+  /* margin: 0 1rem; */
 }
 
 .main-navigation a {
@@ -106,9 +106,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.main-navigation ul li{
+  padding: 1.5rem 1.1rem;
+  background-color: #e433b5;
+}
 .main-navigation ul li:hover > ul {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   background-color: rgb(240, 240, 240);
   min-width: 100vw;
@@ -185,7 +190,7 @@ Icon Menu
   right: -135%;
   /* min-width: calc(100vw - 40px) ; */
   min-width: 100vw;
-  min-height: 86vh;
+  min-height: 90vh;
   height: 100%;
 }
 
@@ -194,7 +199,7 @@ Icon Menu
   .main-navigation.toggled .menu-test-container {
     margin-top: 1rem !important;
     padding-bottom: 1.5rem !important;
-    min-height: 80vh;
+    min-height: 85vh;
   }
 }
 
@@ -209,6 +214,7 @@ Icon Menu
   padding: 1rem 1.1rem;
   clear: both;
   color: white;
+  background-color: transparent;
 }
 
 .main-navigation.toggled .menu-test-container ul li:hover,

@@ -22,7 +22,7 @@ function scrollNavbarMain() {
 
   if (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop) {
     navbarTop.style.backgroundColor = "white";
-    navbarTop.style.padding = "1.5rem 3rem 1.5rem 3rem";
+    navbarTop.style.padding = "0rem 3rem";
     navbarTop.style.boxShadow = "0px 0px 15px 0.5px #00000033";
     logo.style.color = fontColor;
 
@@ -37,7 +37,7 @@ function scrollNavbarMain() {
     }
   } else {
     navbarTop.style.backgroundColor = "transparent";
-    navbarTop.style.padding = "1.5rem 3rem 1.5rem 3rem";
+    navbarTop.style.padding = "0 3rem";
     navbarTop.style.boxShadow = "none";
     logo.style.color = resetFontColor;
 
