@@ -5,8 +5,7 @@
  * navigation support for dropdown menus.
  */
 (function () {
-  const bodyDocument = document.getElementById("body-template");
-  const siteNavigation = document.getElementById("site-navigation");
+  const siteNavigation = document.getElementById("menu_toggle");
 
   // Return early if the navigation don't exist.
   if (!siteNavigation) {
@@ -30,53 +29,6 @@
 
   if (!menu.classList.contains("nav-menu")) {
     menu.classList.add("nav-menu");
-  }
-
-  // Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-  button.addEventListener("click", function () {
-    siteNavigation.classList.toggle("toggled");
-    bodyDocument.classList.add("hidden_scroll_body_template");
-
-    if (button.getAttribute("aria-expanded") === "true") {
-      button.setAttribute("aria-expanded", "false");
-      bodyDocument.classList.remove("hidden_scroll_body_template");
-    } else {
-      button.setAttribute("aria-expanded", "true");
-    }
-  });
-
-  // Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-  document.addEventListener("click", function (event) {
-    const isClickInside = siteNavigation.contains(event.target);
-
-    if (!isClickInside) {
-      siteNavigation.classList.remove("toggled");
-      bodyDocument.classList.remove("hidden_scroll_body_template");
-      button.setAttribute("aria-expanded", "false");
-    }
-  });
-
-  //Al dar click en cualquier item que tengas submenus se hará el efecto de dropdown
-  const itemHasChildren = menu.getElementsByClassName("menu-item-has-children");
-  const submenus = menu.querySelectorAll(".menu-item-has-children > ul");
-
-  // items clicks to show submenus
-  for (let i = 0; i < itemHasChildren.length; i++) {
-    for (let j = 0; j < submenus.length; j++) {
-      if (i === j) {
-        itemHasChildren[i].addEventListener("click", () => {
-          if (!submenus[j].classList.contains("click-open-submenu")) {
-            submenus[j].classList.add("click-open-submenu");
-            itemHasChildren[i].style.setProperty("--deg-icon-arrow", "0deg");
-            // itemHasChildren[i].style.setProperty("border-bottom", "1px solid #4f4d4d");
-          } else {
-            submenus[j].classList.remove("click-open-submenu");
-            itemHasChildren[i].style.setProperty("--deg-icon-arrow", "180deg");
-            //itemHasChildren[i].style.setProperty("border-bottom", "none");
-          }
-        });
-      }
-    }
   }
 
   // Get all the link elements within the menu.
