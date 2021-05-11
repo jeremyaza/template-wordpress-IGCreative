@@ -460,17 +460,12 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-  margin: 0 0 1.5em 3em;
-}
-
 ul {
-  list-style: disc;
+  list-style: none;
 }
 
 ol {
-  list-style: decimal;
+  list-style: none;
 }
 
 li > ul,
@@ -485,6 +480,30 @@ dt {
 
 dd {
   margin: 0 1.5em 1.5em;
+}
+
+/* Default css style menu */
+#primary-menu > ul li {
+  border-color: #e1e1e3;
+  border-style: solid;
+  border-width: 0.1rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+}
+
+#primary-menu > ul > li:nth-last-child(1) {
+  border-bottom: 0.1rem solid #e1e1e3;
+}
+
+#primary-menu > ul li > a {
+  width: 100%;
+  display: block;
+  font-size: 1.3rem;
+  padding: 1.5rem 2rem 1.5rem 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
