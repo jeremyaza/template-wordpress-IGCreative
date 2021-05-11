@@ -4,21 +4,36 @@ window.onscroll = function () {
 };
 
 function scrollNavbarMain() {
+  //Home page
+  const homePage = document.getElementById("body-template");
+
   const navbarTop = document.getElementById("masthead");
-  const logo = document.querySelector(".link_menu_scroll");
-  const scrollTop = 70;
+  const logo = document.querySelector(".site-branding > .site-title > .link_menu_scroll");
+  const siteDescription = document.querySelector(".site-branding > .site-description");
+  var scrollTop = 70;
   const menuToggle = document.getElementById("menu_toggle");
 
   //Menu bars
   const bars = document.querySelectorAll(".bar");
 
-  const fontColor = "#333";
-  const resetFontColor = "#fff";
+  var fontColor = "#333";
+  var resetFontColor = "#fff";
+  var resetFontColorSiteDescription = "#e6e6e6";
+
+  if (!homePage.classList.contains("home")) {
+    fontColor = "#333";
+    resetFontColor = "#333";
+    resetFontColorSiteDescription = "332";
+    scrollTop = 40;
+  }
 
   if (document.body.scrollTop > scrollTop || document.documentElement.scrollTop > scrollTop) {
     navbarTop.style.backgroundColor = "white";
     navbarTop.style.boxShadow = "0px 0px 15px 0.5px #00000033";
     logo.style.color = fontColor;
+    if(siteDescription){
+      siteDescription.style.color = fontColor;
+    }
     menuToggle.style.setProperty("--font-color-before", fontColor);
 
     //All bar with color black
@@ -29,6 +44,9 @@ function scrollNavbarMain() {
     navbarTop.style.backgroundColor = "transparent";
     navbarTop.style.boxShadow = "none";
     logo.style.color = resetFontColor;
+    if(siteDescription){
+      siteDescription.style.color = resetFontColorSiteDescription;
+    }
     menuToggle.style.setProperty("--font-color-before", resetFontColor);
 
     //Reset bars' background color
@@ -86,4 +104,36 @@ function toggleMenu() {
       close2.classList.remove("close-effect-2");
     }
   });
+
+  //Menu wrapper
+  const menuWrapper = document.querySelector("#menu_slide > .menu_wrapper");
+
+  //Al dar click en cualquier item que tengas submenus se hará el efecto de dropdown
+  const itemHasChildren = document.getElementsByClassName("menu-item-has-children");
+  const submenus = document.querySelectorAll(".menu-item-has-children > ul");
+
+  // items clicks to show submenus
+  for (let i = 0; i < itemHasChildren.length; i++) {
+    for (let j = 0; j < submenus.length; j++) {
+      if (i === j) {
+        itemHasChildren[i].addEventListener("click", () => {
+          if (!submenus[j].classList.contains("submenu-open-click")) {
+            submenus[j].classList.add("submenu-open-click");
+            itemHasChildren[i].style.setProperty("--rotate-icon", "0deg");
+            itemHasChildren[i].style.setProperty("--align-items", "flex-start");
+            itemHasChildren[i].style.setProperty("--margin-items", "1.2rem 0 0 0");
+            itemHasChildren[i].style.setProperty("text-decoration-color", "white");
+            menuWrapper.style.setProperty("margin-bottom", "1.5rem");
+          } else {
+            submenus[j].classList.remove("submenu-open-click");
+            itemHasChildren[i].style.setProperty("--rotate-icon", "180deg");
+            itemHasChildren[i].style.setProperty("--align-items", "center");
+            itemHasChildren[i].style.setProperty("--margin-items", "0 0 0 0");
+            itemHasChildren[i].style.setProperty("text-decoration-color", "black");
+            menuWrapper.style.setProperty("margin-bottom", "0");
+          }
+        });
+      }
+    }
+  }
 })();

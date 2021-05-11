@@ -5,74 +5,86 @@
  * navigation support for dropdown menus.
  */
 (function () {
-  const siteNavigation = document.getElementById("menu_toggle");
+  // const siteNavigation = document.getElementById("menu_toggle");
 
-  // Return early if the navigation don't exist.
-  if (!siteNavigation) {
-    return;
-  }
+  // // Return early if the navigation don't exist.
+  // if (!siteNavigation) {
+  //   return;
+  // }
 
-  const button = siteNavigation.getElementsByTagName("button")[0];
+  // const menu = siteNavigation.getElementsByTagName("ul")[0];
 
-  // Return early if the button don't exist.
-  if ("undefined" === typeof button) {
-    return;
-  }
+  // if (!menu.classList.contains("nav-menu")) {
+  //   menu.classList.add("nav-menu");
+  // }
 
-  const menu = siteNavigation.getElementsByTagName("ul")[0];
+  // // Get all the link elements within the menu.
+  // const links = menu.getElementsByTagName("a");
 
-  // Hide menu toggle button if menu is empty and return early.
-  if ("undefined" === typeof menu) {
-    button.style.display = "none";
-    return;
-  }
+  // // Get all the link elements with children within the menu.
+  // const linksWithChildren = menu.querySelectorAll(".menu-item-has-children > a, .page_item_has_children > a");
 
-  if (!menu.classList.contains("nav-menu")) {
-    menu.classList.add("nav-menu");
-  }
+  // // Toggle focus each time a menu link is focused or blurred.
+  // for (const link of links) {
+  //   link.addEventListener("focus", toggleFocus, true);
+  //   link.addEventListener("blur", toggleFocus, true);
+  // }
 
-  // Get all the link elements within the menu.
-  const links = menu.getElementsByTagName("a");
+  // // Toggle focus each time a menu link with children receive a touch event.
+  // for (const link of linksWithChildren) {
+  //   link.addEventListener("touchstart", toggleFocus, false);
+  // }
 
-  // Get all the link elements with children within the menu.
-  const linksWithChildren = menu.querySelectorAll(".menu-item-has-children > a, .page_item_has_children > a");
+  // /**
+  //  * Sets or removes .focus class on an element.
+  //  */
+  // function toggleFocus() {
+  //   if (event.type === "focus" || event.type === "blur") {
+  //     let self = this;
+  //     // Move up through the ancestors of the current link until we hit .nav-menu.
+  //     while (!self.classList.contains("nav-menu")) {
+  //       // On li elements toggle the class .focus.
+  //       if ("li" === self.tagName.toLowerCase()) {
+  //         self.classList.toggle("focus");
+  //       }
+  //       self = self.parentNode;
+  //     }
+  //   }
 
-  // Toggle focus each time a menu link is focused or blurred.
-  for (const link of links) {
-    link.addEventListener("focus", toggleFocus, true);
-    link.addEventListener("blur", toggleFocus, true);
-  }
+  //   if (event.type === "touchstart") {
+  //     const menuItem = this.parentNode;
+  //     event.preventDefault();
+  //     for (const link of menuItem.parentNode.children) {
+  //       if (menuItem !== link) {
+  //         link.classList.remove("focus");
+  //       }
+  //     }
+  //     menuItem.classList.toggle("focus");
+  //   }
+  // }
 
-  // Toggle focus each time a menu link with children receive a touch event.
-  for (const link of linksWithChildren) {
-    link.addEventListener("touchstart", toggleFocus, false);
-  }
+  //Home page
+  const homePage = document.getElementById("body-template");
 
-  /**
-   * Sets or removes .focus class on an element.
-   */
-  function toggleFocus() {
-    if (event.type === "focus" || event.type === "blur") {
-      let self = this;
-      // Move up through the ancestors of the current link until we hit .nav-menu.
-      while (!self.classList.contains("nav-menu")) {
-        // On li elements toggle the class .focus.
-        if ("li" === self.tagName.toLowerCase()) {
-          self.classList.toggle("focus");
-        }
-        self = self.parentNode;
-      }
+  //Primary menu
+  const siteTitle = document.querySelector("#masthead > .site-branding > .site-title > a");
+  const siteDescription = document.querySelector("#masthead > .site-branding > .site-description");
+
+  //Menu bars
+  const menuToggle = document.getElementById("menu_toggle");
+  const bars = document.querySelectorAll(".bar");
+
+  if (!homePage.classList.contains("home")) {
+    siteTitle.style.setProperty("color", "#333");
+  
+    //If exist siteDescription add the style
+    if (siteDescription) {
+      siteDescription.style.setProperty("color", "#333");
     }
 
-    if (event.type === "touchstart") {
-      const menuItem = this.parentNode;
-      event.preventDefault();
-      for (const link of menuItem.parentNode.children) {
-        if (menuItem !== link) {
-          link.classList.remove("focus");
-        }
-      }
-      menuItem.classList.toggle("focus");
+    menuToggle.style.setProperty("--font-color-before", "#333");
+    for (const bar of bars) {
+      bar.style.backgroundColor = "#333";
     }
   }
 })();
