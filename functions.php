@@ -51,7 +51,7 @@ if ( ! function_exists( 'test_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'test' ),
-				'social-primary' => esc_html__( 'Primary Social Menu', 'zubin' ),
+				'social-primary' => esc_html__( 'Primary Social Menu', 'test' ),
 			)
 		);
 
@@ -109,6 +109,44 @@ endif;
 add_action( 'after_setup_theme', 'test_setup' );
 
 /**
+ * Count the number of footer sidebars to enable dynamic classes for the footer
+ *
+ */
+function test_footer_sidebar_class() {
+	$count = 0;
+
+	if ( is_active_sidebar( 'sidebar-2' ) ) {
+		$count++;
+	}
+
+	if ( is_active_sidebar( 'sidebar-3' ) ) {
+		$count++;
+	}
+
+	if ( is_active_sidebar( 'sidebar-4' ) ) {
+		$count++;
+	}
+
+	$class = '';
+
+	switch ( $count ) {
+		case '1':
+			$class = 'one';
+			break;
+		case '2':
+			$class = 'two';
+			break;
+		case '3':
+			$class = 'three';
+			break;
+	}
+
+	if ( $class ) {
+		echo 'class="widget-area footer-widget-area ' . esc_attr( $class ) . '"';
+	}
+}
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -126,17 +164,44 @@ add_action( 'after_setup_theme', 'test_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function test_widgets_init() {
+
+	$args = array(
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	);
+
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Sidebar', 'test' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'test' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
+			'description'   => esc_html__( 'Add widgets here.', 'test' ),			
+		) + $args
 	);
+
+	register_sidebar( 
+		array(
+		'name'        => esc_html__( 'Footer 1', 'test' ),
+		'id'          => 'sidebar-2',
+		'description' => esc_html__( 'Add widgets here to appear in your footer.', 'test' ),
+		) + $args
+	);
+
+	register_sidebar( array(
+		'name'        => esc_html__( 'Footer 2', 'test' ),
+		'id'          => 'sidebar-3',
+		'description' => esc_html__( 'Add widgets here to appear in your footer.', 'test' ),
+		) + $args
+	);
+
+	register_sidebar( array(
+		'name'        => esc_html__( 'Footer 3', 'test' ),
+		'id'          => 'sidebar-4',
+		'description' => esc_html__( 'Add widgets here to appear in your footer.', 'test' ),
+		) + $args
+	);
+
 }
 add_action( 'widgets_init', 'test_widgets_init' );
 
