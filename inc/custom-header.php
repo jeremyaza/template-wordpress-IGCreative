@@ -22,7 +22,7 @@ function test_custom_header_setup() {
 		apply_filters(
 			'test_custom_header_args',
 			array(
-				'default-image'      => get_parent_theme_file_uri( '/assets/images/header-image.jpg' ),
+				'default-image'      => get_parent_theme_file_uri( '/assets/images/img-theme.png' ),
 				'default-text-color' => '#ffffff',
 				'width'              => 1920,
 				'height'             => 1080,
@@ -34,9 +34,9 @@ function test_custom_header_setup() {
 
 	register_default_headers( array(
 		'default-image' => array(
-			'url'           => '%s/assets/images/header-image.jpg',
-			'thumbnail_url' => '%s/assets/images/header-image-275x155.jpg',
-			'description'   => esc_html__( 'Default Header Image', 'zubin' ),
+			'url'           => '%s/assets/images/img-theme.png',
+			'thumbnail_url' => '%s/assets/images/img-theme-275x413.png',
+			'description'   => esc_html__( 'Default Header Image', 'test' ),
 		)
 	) );
 }

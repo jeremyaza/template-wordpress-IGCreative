@@ -12,19 +12,40 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'test' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'test' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'test' ), 'test', '<a href="http://underscores.me/">Dev</a>' );
-				?>
-		</div><!-- .site-info -->
+		<!-- Displays footer widgets if assigned -->
+		<?php
+		if (
+			is_active_sidebar( 'sidebar-2' ) ||
+			is_active_sidebar( 'sidebar-3' ) ||
+			is_active_sidebar( 'sidebar-4' ) ) :
+		?>
+
+			<aside <?php test_footer_sidebar_class(); ?> role="complementary">
+				<div class="wrapper">
+					<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+						<div class="widget-column footer-widget-1">
+							<?php dynamic_sidebar( 'sidebar-2' ); ?>
+						</div><!-- .widget-area -->
+					<?php endif; ?>
+
+					<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+						<div class="widget-column footer-widget-2">
+							<?php dynamic_sidebar( 'sidebar-3' ); ?>
+						</div><!-- .widget-area -->
+					<?php endif; ?>
+
+					<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
+						<div class="widget-column footer-widget-3">
+							<?php dynamic_sidebar( 'sidebar-4' ); ?>
+						</div><!-- .widget-area -->
+					<?php endif; ?>
+				</div><!-- .footer-widgets-wrapper -->
+			</aside><!-- .footer-widgets -->
+		<?php endif;?>
+
+		<div id="site-generator">
+			<?php get_template_part('template-parts/footer/site-info'); ?>
+		</div><!-- #site-generator -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

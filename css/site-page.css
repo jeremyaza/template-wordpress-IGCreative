@@ -1,3 +1,8 @@
+:root {
+  --padding-right-content: 2rem;
+  --padding-left-content: 3rem;
+}
+
 /* .home .custom-header-content .entry-container{
   max-width: 530px !important;
 } */
@@ -6,16 +11,578 @@
   padding-bottom: 1.5rem;
 }
 
-.entry-header {
+/* Header page */
+article .entry-header {
   /* background-color: #6439e0; */
   /* background-image: linear-gradient(90deg, #6439e0 0, #e120ae); */
-  padding-left: 3rem;
-  padding-right: 2rem;
-  padding-top: 3rem;
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  padding-top: 100px;
+  text-align: center;
 }
 
-.entry-content {
-  padding-left: 3rem;
-  padding-right: 2rem;
+article .entry-header .entry-title {
+  font-size: 3rem;
+  font-weight: 600;
 }
 
+/* Content page */
+article .entry-content {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  line-height: 42px;
+}
+
+/* Footer page */
+footer {
+  background-color: #f8f8f8;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+}
+
+aside.footer-widget-area {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+aside.footer-widget-area .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside.footer-widget-area .wrapper > .widget-column {
+  /* width: 33.33%; */
+  width: 100%;
+}
+
+aside.footer-widget-area .wrapper > .widget-column .widget-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+}
+
+aside.footer-widget-area .wrapper > .widget-column p {
+  color: #696969;
+}
+
+aside.footer-widget-area .wrapper > .widget-column a {
+  color: #696969;
+}
+
+aside.footer-widget-area .wrapper > .widget-column a:hover,
+aside.footer-widget-area .wrapper > .widget-column a:active,
+aside.footer-widget-area .wrapper > .widget-column a:focus {
+  text-decoration: underline wavy;
+}
+
+/* Menu */
+aside.footer-widget-area .wrapper > .widget-column ul li a {
+  color: #696969;
+  display: block;
+}
+
+aside.footer-widget-area .wrapper > .widget-column ul li {
+  padding: 0.3rem 0;
+}
+
+aside.footer-widget-area .wrapper > .widget-column ul li a:hover,
+aside.footer-widget-area .wrapper > .widget-column ul li a:active,
+aside.footer-widget-area .wrapper > .widget-column ul li a:focus {
+  text-decoration: underline wavy;
+}
+
+/* Calendar */
+aside.footer-widget-area .wrapper > .widget-column .widget_calendar {
+  font-size: 0.9rem;
+  width: 70%;
+}
+
+/* Search */
+aside.footer-widget-area .wrapper > .widget-column .widget_search form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+aside.footer-widget-area .wrapper > .widget-column .widget_search form .search-field {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.8rem;
+}
+
+aside.footer-widget-area .wrapper > .widget-column .widget_search form .search-submit {
+  background-color: #d8d8d8;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+aside.footer-widget-area .wrapper > .widget-column .widget_search form .search-submit:hover {
+  background-color: #cccaca;
+}
+
+/*----------- Icons -----------*/
+aside.footer-widget-area .wrapper > .widget-column a {
+  --color-icon: #9b9b9b;
+}
+/* NON-BRAND ICONS */
+
+aside.footer-widget-area .wrapper > .widget-column a[href*="mailto"]::before {
+  content: "\f0e0";
+  color: var(--color-icon);
+}
+/* aside.footer-widget-area .wrapper > .widget-column a[href*="/feed/"]::before,
+aside.footer-widget-area .wrapper > .widget-column a[href*="rss"]::before {
+  content: "\f09e";
+  color: var(--color-icon);
+} */
+aside.footer-widget-area .wrapper > .widget-column a[href*="tel:"]::before {
+  content: "\f095";
+  transform: scale(0.9);
+  color: var(--color-icon);
+}
+
+/* Color transparent para el texto */
+aside.footer-widget-area .wrapper > .widget-column a[href*="mailto"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="tel:"] {
+  color: transparent;
+}
+
+/* BRAND ICONS */
+
+aside.footer-widget-area .wrapper > .widget-column a[href*="500px.com"]::before {
+  content: "\f26e";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="amazon."]::before {
+  content: "\f270";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="angel.co"]::before {
+  content: "\f209";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="audible.com"]::before {
+  content: "\f373";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="behance.net"]::before {
+  content: "\f1b4";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="blogger.com"]::before {
+  content: "\f37d";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="codepen.io"]::before {
+  content: "\f1cb";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="creativecommons.com"]::before {
+  content: "\f25e";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="deviantart.com"]::before {
+  content: "\f1bd";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="digg.com"]::before {
+  content: "\f1a6";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="discordapp.com"]::before {
+  content: "\f392";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="dribbble.com"]::before {
+  content: "\f17d";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="ebay"]::before {
+  content: "\f4f4";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="etsy.com"]::before {
+  content: "\f2d7";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="facebook.com"]::before {
+  content: "\f39e";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="flickr.com"]::before {
+  content: "\f16e";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="github.com"]::before {
+  content: "\f113";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="gitlab.com"]::before {
+  content: "\f296";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="goodreads.com"]::before {
+  content: "\f3a9";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="houzz"]::before {
+  content: "\f27c";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="imdb.com"]::before {
+  content: "\f2d8";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="instagram.com"]::before {
+  content: "\f16d";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="kickstarter.com"]::before {
+  content: "\f3bc";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="jsfiddle.net"]::before {
+  content: "\f1cc";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="linkedin.com"]::before {
+  content: "\f0e1";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="last.fm"]::before {
+  content: "\f202";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="medium.com"]::before {
+  content: "\f3c7";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="meetup.com"]::before {
+  content: "\f2e0";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="mixcloud.com"]::before {
+  content: "\f289";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="patreon.com"]::before {
+  content: "\f3d9";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="pscp.tv"]::before {
+  content: "\f3da";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="pinterest"]::before {
+  content: "\f231";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="play.google.com"]::before {
+  content: "\f3ab";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="plus.google.com"]::before {
+  content: "\f0d5";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="producthunt.com"]::before {
+  content: "\f288";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="quora.com"]::before {
+  content: "\f2c4";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="reddit.com"]::before {
+  content: "\f281";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="slack.com"]::before {
+  content: "\f198";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="slideshare.net"]::before {
+  content: "\f1e7";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="soundcloud.com"]::before {
+  content: "\f1be";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="spotify.com"]::before {
+  content: "\f1bc";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="telegram.me"]::before,
+aside.footer-widget-area .wrapper > .widget-column a[href*="//t.me"]::before
+{
+  content: "\f3fe";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="tiktok.com"]::before {
+  content: "\e07b";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="tumblr.com"]::before {
+  content: "\f173";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="twitch"]::before {
+  content: "\f1e8";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="twitter.com"]::before {
+  content: "\f099";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="vimeo.com"]::before {
+  content: "\f27d";
+  font-family: "Font Awesome 5 Brands";
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="wordpress.org"]::before,
+aside.footer-widget-area .wrapper > .widget-column a[href*="wordpress.com"]::before {
+  content: "\f411";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="youtube.com"]::before {
+  content: "\f167";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="unsplash.com"]::before {
+  content: "\e07c";
+  font-family: "Font Awesome 5 Brands";
+  color: var(--color-icon);
+}
+
+/* Color transparent para el texto del icono*/
+aside.footer-widget-area .wrapper > .widget-column a[href*="500px.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="amazon."] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="angel.co"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="audible.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="behance.net"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="blogger.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="codepen.io"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="creativecommons.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="deviantart.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="digg.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="discordapp.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="dribbble.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="ebay"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="etsy.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="facebook.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="flickr.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="github.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="gitlab.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="goodreads.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="houzz"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="imdb.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="instagram.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="kickstarter.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="jsfiddle.net"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="linkedin.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="last.fm"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="medium.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="meetup.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="mixcloud.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="patreon.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="pscp.tv"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="pinterest"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="play.google.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="plus.google.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="producthunt.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="quora.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="reddit.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="slack.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="slideshare.net"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="soundcloud.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="spotify.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="telegram.me"],
+aside.footer-widget-area .wrapper > .widget-column a[href*="//t.me"]
+{
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="tiktok.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="tumblr.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="twitch"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="twitter.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="vimeo.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="wordpress.org"],
+aside.footer-widget-area .wrapper > .widget-column a[href*="wordpress.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="youtube.com"] {
+  color: transparent;
+}
+aside.footer-widget-area .wrapper > .widget-column a[href*="unsplash.com"] {
+  color: transparent;
+}
+
+/* Site generator - credits */
+#site-generator .site-info {
+  text-align: center;
+}
+
+#site-generator .site-info a {
+  color: #696969;
+}
+
+/* Responsive */
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
+  aside.footer-widget-area .wrapper {
+    display: block;
+  }
+
+  aside.footer-widget-area .wrapper > .widget-column {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  aside.footer-widget-area .wrapper > .widget-column .widget_search form {
+    margin: 0 auto;
+  }
+}

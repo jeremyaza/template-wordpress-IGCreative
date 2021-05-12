@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="body-template">
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'test' ); ?></a>
@@ -45,23 +45,47 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<div class="bars">
-					<div class="bar"></div>
-					<div class="bar"></div>
-					<div class="bar"></div>
+		<!-- Button toggle -->
+		<div id="menu_toggle" class="menu_toggle" onclick="toggleMenu()">
+        	<div class="bars">
+          		<div class="bar"></div>
+          		<div class="bar"></div>
+          		<div class="bar"></div>
+        	</div>
+      	</div>
+		
+		<!-- Menu main -->
+		<div id="menu_wrapper_header" class="contain_menu_main">
+			<div id="menu_slide" class="content_menu">
+				<nav class="menu_wrapper">
+					<div class="close_menu" onclick="toggleMenu()">
+						<div class="close-1 x" id="close-1"></div>
+						<div class="close-2 x" id="close-2"></div>
+					</div>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+					?>
+				</nav>
+				<div class="menu_bottom">
+					<p><?php bloginfo( 'name' ); ?></p>
+					<?php if ( has_nav_menu( 'social-primary' ) ) : ?>
+						<?php 
+							wp_nav_menu( array(
+								'theme_location' 	=> 'social-primary',
+								'menu_class'     	=> 'social-links-menu social-icons s-icons',
+								'container'			=> '',
+								'link_before'    	=> '<span class="screen-reader-text">',
+							) );
+						?>
+					<?php endif; ?>
 				</div>
-			</button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			</div>
+		</div>
 	</header><!-- #masthead -->
 
 	<?php test_sections(); ?>
