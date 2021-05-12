@@ -72,7 +72,17 @@
 					?>
 				</nav>
 				<div class="menu_bottom">
-					<p>Template</p>
+					<p><?php bloginfo( 'name' ); ?></p>
+					<?php if ( has_nav_menu( 'social-primary' ) ) : ?>
+						<?php 
+							wp_nav_menu( array(
+								'theme_location' 	=> 'social-primary',
+								'menu_class'     	=> 'social-links-menu social-icons s-icons',
+								'container'			=> '',
+								'link_before'    	=> '<span class="screen-reader-text">',
+							) );
+						?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

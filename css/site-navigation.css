@@ -127,18 +127,19 @@ Site main
   /* z-index: 9; */
 }
 
-.custom-header-content .entry-header {
+.custom-header-content .entry-container-wrapper .entry-container > .entry-header {
   background: transparent;
   padding: 0;
   color: white;
+  text-align: left;
 }
 
-.custom-header-content .entry-container .entry-header .entry-title {
+.custom-header-content .entry-container-wrapper .entry-container .entry-header > .entry-title {
   font-size: 2.8rem;
   padding: 0.5rem 0;
 }
 
-.custom-header-content .entry-container .entry-summary {
+.custom-header-content .entry-container-wrapper .entry-container > .entry-summary {
   display: flex;
   flex-direction: column;
   color: white;
@@ -312,15 +313,15 @@ Responsive header custom
 */
 
 @media screen and (max-width: 37.5em) {
-  .custom-header-content .entry-container .entry-header .entry-title {
+  .custom-header-content .entry-container-wrapper .entry-container .entry-header > .entry-title {
     font-size: 1.5rem;
   }
-  .custom-header-content .entry-container .entry-summary {
-    font-size: 1rem;
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary {
+    font-size: 1.3rem;
   }
 
-  .custom-header-content .entry-container .entry-summary a {
-    font-size: 0.9rem;
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary a {
+    font-size: 0.95rem;
   }
 
   /* Background Image */
@@ -335,13 +336,14 @@ Responsive header custom
 }
 
 @media (max-width: 47.5em) and (min-width: 37.5em) {
-  .custom-header-content .entry-container .entry-header .entry-title {
-    font-size: 1.2rem;
+  .custom-header-content .entry-container-wrapper .entry-container .entry-header > .entry-title {
+    font-size: 1.6rem;
   }
-  .custom-header-content .entry-container .entry-summary {
+
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary {
     font-size: 1rem;
   }
-  .custom-header-content .entry-container .entry-summary a {
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary a {
     font-size: 0.9rem;
   }
   /* Width main container */
@@ -352,6 +354,49 @@ Responsive header custom
   /* Trapezoid */
   i.trapezoid {
     border-bottom: 100px solid #fff;
+  }
+}
+
+@media (max-width: 880px) and (min-width: 761px) {
+  .home .custom-header-content .entry-container {
+    max-width: 380px !important;
+  }
+
+  .custom-header-content {
+    margin-left: 0;
+  }
+
+  .custom-header-content .entry-container-wrapper .entry-container .entry-header > .entry-title {
+    font-size: 1.6rem;
+  }
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary {
+    font-size: 1rem;
+  }
+  .custom-header-content .entry-container-wrapper .entry-container > .entry-summary a {
+    font-size: 0.95rem;
+  }
+
+  .custom-header::before {
+    left: 91%;
+    top: 65%;
+    height: 77%;
+    width: 40%;
+  }
+
+  /* Trapezoid */
+  i.trapezoid {
+    border-bottom: 115px solid #fff;
+    --position-left: -122px;
+  }
+  i.trapezoid::after {
+    width: 200px;
+    height: 165px;
+    top: -73px;
+  }
+  i.trapezoid::before {
+    width: 225px;
+    height: 285px;
+    bottom: -59px;
   }
 }
 
@@ -605,6 +650,257 @@ Responsive header custom
   padding-bottom: 1rem;
 }
 
+.menu_bottom p {
+  text-transform: none;
+}
+
+.menu_bottom .social-links-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu_bottom .social-links-menu li {
+  margin-right: 1rem;
+}
+
+.menu_bottom .social-links-menu li a {
+  color: #6e6d70;
+  font-size: 0.9rem;
+}
+
+/* Icons */
+.social-icons a::before {
+  content: "\f0c1";
+  display: block;
+  font-family: "Font Awesome 5";
+  font-size: 1.1rem;
+}
+
+.social-icons a:hover::before {
+  transform: scale(1.2);
+  transition: 0.2s ease;
+}
+
+/* NON-BRAND ICONS */
+
+.s-icons a[href*="mailto"]::before {
+  content: "\f0e0";
+}
+.s-icons a[href*="/feed/"]::before,
+.s-icons a[href*="rss"]::before {
+  content: "\f09e";
+}
+.s-icons a[href*="tel:"]::before {
+  content: "\f095";
+  transform: scale(0.9);
+}
+
+/* BRAND ICONS */
+
+.s-icons a[href*="500px.com"]::before {
+  content: "\f26e";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="amazon."]::before {
+  content: "\f270";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="angel.co"]::before {
+  content: "\f209";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="audible.com"]::before {
+  content: "\f373";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="behance.net"]::before {
+  content: "\f1b4";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="blogger.com"]::before {
+  content: "\f37d";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="codepen.io"]::before {
+  content: "\f1cb";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="creativecommons.com"]::before {
+  content: "\f25e";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="deviantart.com"]::before {
+  content: "\f1bd";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="digg.com"]::before {
+  content: "\f1a6";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="discordapp.com"]::before {
+  content: "\f392";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="dribbble.com"]::before {
+  content: "\f17d";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="ebay"]::before {
+  content: "\f4f4";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="etsy.com"]::before {
+  content: "\f2d7";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="facebook.com"]::before {
+  content: "\f39e";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="flickr.com"]::before {
+  content: "\f16e";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="github.com"]::before {
+  content: "\f113";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="gitlab.com"]::before {
+  content: "\f296";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="goodreads.com"]::before {
+  content: "\f3a9";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="houzz"]::before {
+  content: "\f27c";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="imdb.com"]::before {
+  content: "\f2d8";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="instagram.com"]::before {
+  content: "\f16d";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="kickstarter.com"]::before {
+  content: "\f3bc";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="jsfiddle.net"]::before {
+  content: "\f1cc";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="linkedin.com"]::before {
+  content: "\f0e1";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="last.fm"]::before {
+  content: "\f202";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="medium.com"]::before {
+  content: "\f3c7";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="meetup.com"]::before {
+  content: "\f2e0";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="mixcloud.com"]::before {
+  content: "\f289";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="patreon.com"]::before {
+  content: "\f3d9";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="pscp.tv"]::before {
+  content: "\f3da";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="pinterest"]::before {
+  content: "\f231";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="play.google.com"]::before {
+  content: "\f3ab";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="plus.google.com"]::before {
+  content: "\f0d5";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="producthunt.com"]::before {
+  content: "\f288";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="quora.com"]::before {
+  content: "\f2c4";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="reddit.com"]::before {
+  content: "\f281";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="slack.com"]::before {
+  content: "\f198";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="slideshare.net"]::before {
+  content: "\f1e7";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="soundcloud.com"]::before {
+  content: "\f1be";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="spotify.com"]::before {
+  content: "\f1bc";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="telegram.me"]::before,
+.s-icons a[href*="//t.me"]::before
+{
+  content: "\f3fe";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="tiktok.com"]::before {
+  content: "\e07b";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="tumblr.com"]::before {
+  content: "\f173";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="twitch"]::before {
+  content: "\f1e8";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="twitter.com"]::before {
+  content: "\f099";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="vimeo.com"]::before {
+  content: "\f27d";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="wordpress.org"]::before,
+.s-icons a[href*="wordpress.com"]::before {
+  content: "\f411";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="youtube.com"]::before {
+  content: "\f167";
+  font-family: "Font Awesome 5 Brands";
+}
+.s-icons a[href*="unsplash.com"]::before {
+  content: "\e07c";
+  font-family: "Font Awesome 5 Brands";
+}
+
 /* Responsive */
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
@@ -646,7 +942,7 @@ Responsive header custom
   }
 
   /* Trapezoid */
-  i.trapezoid{
+  i.trapezoid {
     --position-left: -104px;
   }
   i.trapezoid::after {
