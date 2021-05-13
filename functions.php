@@ -219,6 +219,9 @@ function test_scripts() {
 		wp_enqueue_style( 'test-font-awesome', get_template_directory_uri() . '/css/font-awesome.css', false, "5.15.1", 'all' );
 	}
 
+	// Fuentes
+	wp_enqueue_style('fonts-text', get_template_directory_uri() . '/css/stylesheet.css');
+
 	wp_enqueue_style( 'test-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'test-style', 'rtl', 'replace' );
 
