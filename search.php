@@ -10,17 +10,19 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main search-page">
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'test' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
+				<h3 class="page-title">
+					<span class="search-text">
+						<?php
+						/* translators: %s: search query. */
+						printf( esc_html__( 'Resultados de la búsqueda: %s', 'test' ), '<span>' . get_search_query() . '</span>' );
+						?>
+					</span>
+				</h3>
 			</header><!-- .page-header -->
 
 			<?php
