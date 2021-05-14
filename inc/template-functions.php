@@ -357,7 +357,7 @@ add_action( 'wp_enqueue_scripts', 'test_header_meadia_container_css', 11 );
  */
 function test_button_border_radius_css() {
 
-	$radius = '9';
+	$radius = '3';
 
 	$css = 'button, input[type="button"], input[type="reset"], input[type="submit"], .button, .posts-navigation .nav-links a, .pagination .nav-links .prev, .pagination .nav-links .next, .site-main #infinite-handle span button, .hero-content-wrapper .more-link, .promotion-sale-wrapper .hentry .more-link, .promotion-contact-wrapper .hentry .more-link, .recent-blog-content .more-recent-posts .more-link, .custom-header .more-link, .featured-slider-section .more-link, #feature-slider-section .more-link, .view-all-button .more-link, .woocommerce div.product form.cart .button, .woocommerce #respond input#submit, .woocommerce button.button, .woocommerce input.button, .pricing-section .hentry .more-link, .product-container .wc-forward, .promotion-section .more-link, #footer-newsletter .ewnewsletter .hentry form input[type="email"], #footer-newsletter .hentry.ew-newsletter-wrap.newsletter-action.custom input[type="text"], #footer-newsletter .hentry.ew-newsletter-wrap.newsletter-action.custom input[type="text"] ~ input[type="submit"], .app-section .more-link, .promotion-sale .more-link, .venue-section .more-link, .theme-scheme-music button.ghost-button > span, .theme-scheme-music .button.ghost-button > span, .theme-scheme-music .more-link.ghost-button > span { border-radius: ' . esc_attr( $radius ) . 'px' . '; }';
 
