@@ -1,0 +1,217 @@
+/*---------------------- 
+    NOT FOUND 
+-------------------------*/
+
+/* Container Not Found */
+.no-results.not-found {
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+/* Header page not found */
+section .page-header {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  padding-top: 100px;
+  text-align: center;
+}
+
+/* Content page not found */
+section .page-content {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+}
+
+section .page-content p {
+  font-size: 1.1rem;
+}
+
+section .page-content form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 0;
+}
+
+section .page-content form .search-field {
+  padding: 0.5rem 0.9rem;
+  border-radius: 50px 0 0 50px;
+  border-color: #7d7d7d;
+  outline: none;
+}
+
+section .page-content form .search-field:focus {
+  outline: #6439e0 2px solid;
+}
+
+section .page-content form .search-submit {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 50px 50px 0;
+  background-color: #6439e0;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+section .page-content form .search-submit:hover,
+section .page-content form .search-submit:active,
+section .page-content form .search-submit:focus {
+  background-color: #4b2f9e;
+}
+
+/*---------------
+    Search page
+ ----------------*/
+
+.search-page .page-header {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  padding-top: 100px;
+}
+
+.search-page .page-header .page-title {
+  background-color: #ebebeb;
+  padding: 1rem;
+}
+
+.search-page .page-header .page-title > .search-text {
+  font-weight: 400;
+}
+
+/* Article search */
+.search-page article {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  margin: 1.4rem 0;
+}
+
+.search-page article .entry-header {
+  padding-top: 2rem;
+}
+
+.search-page article .entry-header .entry-title a {
+  color: #404040;
+}
+
+.search-page article .entry-header .entry-title a:hover,
+.search-page article .entry-header .entry-title a:active,
+.search-page article .entry-header .entry-title a:focus {
+  text-decoration: underline wavy;
+}
+
+/* .search-page article .entry-header .entry-title a:visited {
+  color: #4272cc;
+} */
+
+.search-page article img {
+  margin-top: 1rem;
+}
+
+.search-page article .entry-header .entry-meta {
+  color: #7d7d7d;
+}
+
+.search-page article .entry-header .entry-meta a {
+  color: #6439e0;
+}
+
+.search-page article .entry-header .entry-meta a:hover,
+.search-page article .entry-header .entry-meta a:active,
+.search-page article .entry-header .entry-meta a:focus {
+  text-decoration: underline wavy;
+}
+
+/* .search-page article .entry-header .entry-meta a:visited {
+  color: #264580;
+} */
+
+.search-page article .entry-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1.2rem 0;
+}
+
+.search-page article .entry-footer a {
+  margin-right: 0.2rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  border: 1.5px solid #6439e0;
+  background-color: transparent;
+  color: #6439e0;
+  font-weight: 400;
+  transition: ease 599ms;
+}
+
+.search-page article .entry-footer a:first-child {
+  margin-left: 0.5rem;
+}
+
+.search-page article .entry-footer a:hover,
+.search-page article .entry-footer a:active,
+.search-page article .entry-footer a:focus {
+  border: 1.5px solid #6439e0;
+  background-color: #6439e0;
+  color: white;
+}
+
+/*---------------
+    Responsive
+ ----------------*/
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  /*---------------------- 
+        NOT FOUND 
+    -------------------------*/
+  section .page-header {
+    font-size: 0.8rem;
+  }
+  section .page-content p {
+    font-size: 0.9rem;
+  }
+  /*---------------
+        Search page
+    ----------------*/
+  .search-page article .entry-header .entry-meta {
+    font-size: 0.9rem;
+  }
+  .search-page article .entry-summary p {
+    font-size: 0.9rem;
+  }
+  .search-page .page-header .page-title > .search-text {
+    font-size: 1rem;
+  }
+  .search-page article .entry-footer {
+    justify-content: space-between;
+  }
+  .search-page article .entry-footer a {
+    font-size: 0.8rem;
+  }
+  .search-page article .entry-footer span {
+    margin-bottom: 1rem;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /*---------------------- 
+        NOT FOUND 
+    -------------------------*/
+  section .page-header {
+    font-size: 0.95rem;
+  }
+  section .page-content p {
+    font-size: 1rem;
+  }
+  /*---------------
+        Search page
+    ----------------*/
+  .search-page article .entry-summary p {
+    font-size: 0.93rem;
+  }
+  .search-page .page-header .page-title > .search-text {
+    font-size: 1.1rem;
+  }
+}
