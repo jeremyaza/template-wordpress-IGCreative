@@ -28,12 +28,21 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 70px;
   margin-bottom: 1.5em;
 }
 /*Question*/
 #question {
   width: 20px;
+}
+
+#question-search-not-found {
+  width: 50px;
+}
+
+.first-child-question,
+.last-child-question {
+  width: 40px !important;
 }
 
 .question_mark_1 {
@@ -59,7 +68,7 @@
 .question_mark_2 {
   position: absolute;
   bottom: 3px;
-  left: 49%;
+  left: 48%;
   animation: moveQuestion2 2s infinite;
   animation-delay: 500ms;
 }
@@ -80,20 +89,20 @@
   position: absolute;
   bottom: -5px;
   left: 56%;
-  transform: rotate(15deg);
+  transform: rotate(25deg);
   animation: moveQuestion3 2s infinite;
   animation-delay: 1s;
 }
 
 @keyframes moveQuestion3 {
   0% {
-    transform: translateY(0px) rotate(15deg);
+    transform: translateY(0px) rotate(25deg);
   }
   50% {
-    transform: translateY(15px) rotate(15deg);
+    transform: translateY(15px) rotate(25deg);
   }
   100% {
-    transform: translateY(0px) rotate(15deg);
+    transform: translateY(0px) rotate(25deg);
   }
 }
 
@@ -160,11 +169,102 @@
   Information for error
 ----------------------*/
 .info_not_found {
+  width: 100%;
   margin-top: 1.6em;
+  text-align: center;
+  line-height: 2;
 }
 
-.info_not_found .page-title{
+.info_not_found .page-title {
   background-color: white !important;
+}
+
+.info_not_found .search-form {
+  margin: 1rem 0;
+}
+
+.info_not_found .search-form .search-field {
+  padding: 0.49rem 0.9rem;
+  border-radius: 50px 0 0 50px;
+  border-color: #7d7d7d;
+  outline: none;
+  margin-right: -10px;
+}
+
+.info_not_found .search-form .search-field:focus {
+  outline: #6439e0 2px solid;
+}
+
+.info_not_found .search-form .search-submit {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 50px 50px 0;
+  background-color: #6439e0;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.info_not_found .search-form .search-submit:hover,
+.info_not_found .search-form .search-submit:active,
+.info_not_found .search-form .search-submit:focus {
+  background-color: #4b2f9e;
+}
+
+/*--------- Content ----------*/
+.not-found .page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 4.5rem;
+}
+
+/* .not-found .page-content .widget {
+  margin: 0 1rem 1.8rem 0;
+} */
+
+.not-found .page-content .widget .widgettitle,
+.not-found .page-content .widget .widget-title {
+  font-size: 1rem;
+}
+
+.not-found .page-content .widget a {
+  color: #666666;
+}
+
+.not-found .page-content .widget a:hover,
+.not-found .page-content .widget a:active,
+.not-found .page-content .widget a:focus {
+  color: #6439e0;
+  text-decoration: underline wavy;
+}
+
+.not-found .page-content .widget ul {
+  margin-top: 1rem;
+}
+
+/* Archive widget */
+.not-found .page-content .widget_archive p {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.not-found .page-content .widget_archive select {
+  margin-top: 1rem;
+  width: 200px;
+  padding: 0.3rem 1rem;
+  background-color: #ececec;
+  color: #666666;
+  border: none;
+}
+
+/* Tags */
+.not-found .page-content .widget_tag_cloud .tagcloud {
+  display: flex;
+  flex-direction: column;
+}
+.not-found .page-content .widget_tag_cloud .tagcloud a {
+  font-size: 1rem !important;
 }
 
 /*---------------
@@ -191,6 +291,23 @@
   #NotFound {
     width: 130px;
   }
+
+  /*Content  */
+  .not-found .page-content .widget {
+    width: 100%;
+  }
+
+  .not-found .page-content .widget_archive p {
+    font-size: 0.8rem;
+  }
+
+  .not-found .page-content .widget_archive select {
+    font-size: 0.9rem;
+  }
+
+  .not-found .page-content .widget a {
+    font-size: 0.9rem;
+  }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767px) {
@@ -211,6 +328,25 @@
   }
   #NotFound {
     width: 160px;
+  }
+
+  /* Content */
+  .not-found .page-content .widget_archive p {
+    font-size: 0.75rem;
+  }
+
+  .not-found .page-content .widget_archive select {
+    font-size: 0.9rem;
+    width: 140px;
+  }
+
+  .not-found .page-content .widget_tag_cloud,
+  .not-found .page-content .widget_categories {
+    text-align: right;
+  }
+
+  .not-found .page-content .widget a {
+    font-size: 0.9rem;
   }
 }
 
