@@ -20,6 +20,13 @@ function scrollNavbarMain() {
   var resetFontColor = "#fff";
   var resetFontColorSiteDescription = "#e6e6e6";
 
+  //Cuando de deshabilita el mediaHeader toma estas estilos css
+  if (!(homePage.classList.contains("has-header-image") && homePage.classList.contains("absolute-header") && homePage.classList.contains("has-header-media"))) {
+    fontColor = "#333";
+    resetFontColor = "#333";
+    resetFontColorSiteDescription = "332";
+  }
+
   if (!homePage.classList.contains("home")) {
     fontColor = "#333";
     resetFontColor = "#333";
@@ -31,7 +38,7 @@ function scrollNavbarMain() {
     navbarTop.style.backgroundColor = "white";
     navbarTop.style.boxShadow = "0px 0px 15px 0.5px #00000033";
     logo.style.color = fontColor;
-    if(siteDescription){
+    if (siteDescription) {
       siteDescription.style.color = fontColor;
     }
     menuToggle.style.setProperty("--font-color-before", fontColor);
@@ -44,7 +51,7 @@ function scrollNavbarMain() {
     navbarTop.style.backgroundColor = "transparent";
     navbarTop.style.boxShadow = "none";
     logo.style.color = resetFontColor;
-    if(siteDescription){
+    if (siteDescription) {
       siteDescription.style.color = resetFontColorSiteDescription;
     }
     menuToggle.style.setProperty("--font-color-before", resetFontColor);
@@ -134,6 +141,28 @@ function toggleMenu() {
           }
         });
       }
+    }
+  }
+
+  // Cuando se deshabilite el mediaHeader se coloca estos estilos css
+  const homePage = document.getElementById("body-template");
+  const logo = document.querySelector(".site-branding > .site-title > .link_menu_scroll");
+  const siteDescription = document.querySelector(".site-branding > .site-description");
+  const menuToggle = document.getElementById("menu_toggle");
+
+  //Menu bars
+  const bars = document.querySelectorAll(".bar");
+
+  if (!(homePage.classList.contains("has-header-image") && homePage.classList.contains("absolute-header") && homePage.classList.contains("has-header-media"))) {
+    logo.style.color = "#333";
+    if (siteDescription) {
+      siteDescription.style.color = "#333";
+    }
+    menuToggle.style.setProperty("--font-color-before", "#333");
+
+    //All bar with color black
+    for (const bar of bars) {
+      bar.style.backgroundColor = "#333";
     }
   }
 })();
