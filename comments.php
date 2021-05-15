@@ -26,25 +26,25 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h3 class="comments-title">
 			<?php
 			$test_comment_count = get_comments_number();
 			if ( '1' === $test_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'Un pensamiento sobre &ldquo;%1$s&rdquo;', 'test' ),
+					esc_html__( 'Un comentario sobre &ldquo;%1$s&rdquo;', 'test' ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf( 
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s pensamientos sobre &ldquo;%2$s&rdquo;', '%1$s pensamientos sobre &ldquo;%2$s&rdquo;', $test_comment_count, 'comments title', 'test' ) ),
+					esc_html( _nx( '%1$s comentarios sobre &ldquo;%2$s&rdquo;', '%1$s comentarios sobre &ldquo;%2$s&rdquo;', $test_comment_count, 'comments title', 'test' ) ),
 					number_format_i18n( $test_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h3><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
 

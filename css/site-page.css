@@ -43,7 +43,7 @@ article .entry-footer {
 
 article .entry-footer a {
   color: white;
-  padding: 0.5rem 1.1rem;
+  padding: 0.4rem 1.1rem;
   background-color: #4272cc;
   border-radius: 3px;
 }
@@ -56,7 +56,7 @@ article .entry-footer a:focus {
 
 /* Footer main*/
 footer {
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: var(--padding-left-content);
