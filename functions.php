@@ -211,6 +211,9 @@ add_action( 'widgets_init', 'test_widgets_init' );
 function test_scripts() {
 	wp_enqueue_style('site-navigation', get_template_directory_uri() . '/css/site-navigation.css');
 	wp_enqueue_style('site-page-style', get_template_directory_uri() . '/css/site-page.css');
+	wp_enqueue_style('style-content-search', get_template_directory_uri() . '/css/style-content-search.css');
+	wp_enqueue_style('style-404', get_template_directory_uri() . '/css/404/style-404.css');
+	wp_enqueue_style('styles-content-pages', get_template_directory_uri() . '/css/pages-content.css');
 
 	// By default, only load the Font Awesome fonts if the social menu is in use
 	$load_font_awesome = apply_filters( 'test_load_font_awesome', has_nav_menu( 'social-primary' ) );
@@ -218,6 +221,9 @@ function test_scripts() {
 	if ( $load_font_awesome ) {
 		wp_enqueue_style( 'test-font-awesome', get_template_directory_uri() . '/css/font-awesome.css', false, "5.15.1", 'all' );
 	}
+
+	// Fuentes
+	wp_enqueue_style('fonts-text', get_template_directory_uri() . '/css/stylesheet.css');
 
 	wp_enqueue_style( 'test-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'test-style', 'rtl', 'replace' );

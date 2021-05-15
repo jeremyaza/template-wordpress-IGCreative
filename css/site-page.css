@@ -1,6 +1,6 @@
 :root {
-  --padding-right-content: 2rem;
-  --padding-left-content: 3rem;
+  --padding-right-content: 4rem;
+  --padding-left-content: 4.5rem;
 }
 
 /* .home .custom-header-content .entry-container{
@@ -11,6 +11,9 @@
   padding-bottom: 1.5rem;
 }
 
+/*----------- 
+  Page
+-----------*/
 /* Header page */
 article .entry-header {
   /* background-color: #6439e0; */
@@ -33,9 +36,27 @@ article .entry-content {
   line-height: 42px;
 }
 
-/* Footer page */
+/* Footer article to page */
+article .entry-footer {
+  background-color: white;
+}
+
+article .entry-footer a {
+  color: white;
+  padding: 0.4rem 1.1rem;
+  background-color: #4272cc;
+  border-radius: 3px;
+}
+
+article .entry-footer a:hover,
+article .entry-footer a:active,
+article .entry-footer a:focus {
+  background-color: #35538a;
+}
+
+/* Footer main*/
 footer {
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: var(--padding-left-content);
@@ -48,12 +69,13 @@ aside.footer-widget-area {
 }
 aside.footer-widget-area .wrapper {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
 }
 
 aside.footer-widget-area .wrapper > .widget-column {
-  /* width: 33.33%; */
-  width: 100%;
+  /* width: 100%; */
+  width: 33.33%;
 }
 
 aside.footer-widget-area .wrapper > .widget-column .widget-title {
@@ -122,7 +144,67 @@ aside.footer-widget-area .wrapper > .widget-column .widget_search form .search-s
   background-color: #cccaca;
 }
 
-/*----------- Icons -----------*/
+.wp-block-pullquote blockquote,
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+  border-color: #6fb9c8;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+  background-color: transparent;
+  padding: 0 0 0 30px;
+}
+
+.wp-block-quote {
+  border-left: 0.25rem solid;
+  border-left-color: #6fb9c8;
+  margin: 1rem 0 1.75rem;
+  padding-left: 1rem;
+}
+
+blockquote {
+  font-size: 22px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 1rem 0 1.458333333333333rem 0;
+  padding-top: 70px;
+  position: relative;
+  text-align: center;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) {
+  background: none;
+}
+
+.wp-block-pullquote blockquote,
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+  border-color: #6fb9c8;
+}
+
+.wp-block-pullquote blockquote {
+  border-bottom: 4px solid;
+  border-bottom-color: #6fb9c8;
+  border-top: 4px solid;
+  border-top-color: #6fb9c8;
+  margin-top: 49px;
+  padding: 49px 0;
+  text-align: center;
+}
+
+.wp-block-pullquote__citation,
+.wp-block-pullquote cite {
+  color: inherit;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.615384615384615;
+  text-transform: none;
+}
+
+/*----------- 
+  Icons 
+-----------*/
 aside.footer-widget-area .wrapper > .widget-column a {
   --color-icon: #9b9b9b;
 }
@@ -570,9 +652,85 @@ aside.footer-widget-area .wrapper > .widget-column a[href*="unsplash.com"] {
   color: #696969;
 }
 
+/* Widget */
+#secondary.widget-area {
+  padding-left: var(--padding-left-content);
+  padding-right: var(--padding-right-content);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+#secondary.widget-area > .widget {
+  position: relative;
+  width: 46%;
+  margin: 0 1.3rem 1.2rem 0;
+}
+
+#secondary.widget-area > .widget .widget-title {
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+#secondary.widget-area > .widget a {
+  color: #4674a0;
+}
+
+#secondary.widget-area > .widget a:hover,
+#secondary.widget-area > .widget a:active,
+#secondary.widget-area > .widget a:focus {
+  text-decoration: underline wavy;
+}
+
+/* Form */
+#secondary.widget-area > .widget form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#secondary.widget-area > .widget form .search-field {
+  padding: 0.5rem 0.9rem;
+  border-radius: 3px 0 0 3px;
+}
+
+#secondary.widget-area > .widget form .search-submit {
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 3px 3px 0;
+  background-color: #4272cc;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#secondary.widget-area > .widget form .search-submit:hover,
+#secondary.widget-area > .widget form .search-submit:active,
+#secondary.widget-area > .widget form .search-submit:focus {
+  background-color: #35538a;
+}
+
 /* Responsive */
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 576px) {
+  :root {
+    --padding-right-content: 3rem;
+    --padding-left-content: 3.5rem;
+  }
+  /* Content page */
+  article .entry-header .entry-title {
+    font-size: 1.5rem;
+  }
+  article .entry-content p,
+  article .entry-content a,
+  article .entry-content span {
+    font-size: 0.9rem;
+  }
+
+  /* Widget main footer */
   aside.footer-widget-area .wrapper {
     display: block;
   }
@@ -584,5 +742,56 @@ aside.footer-widget-area .wrapper > .widget-column a[href*="unsplash.com"] {
 
   aside.footer-widget-area .wrapper > .widget-column .widget_search form {
     margin: 0 auto;
+  }
+
+  /* Widget sidebar*/
+  #secondary.widget-area > .widget {
+    width: 100%;
+    margin-right: 0;
+  }
+  #secondary.widget-area > .widget .widget-title {
+    font-size: 1.2rem;
+  }
+  #secondary.widget-area > .widget a,
+  #secondary.widget-area > .widget p,
+  #secondary.widget-area > .widget span,
+  #secondary.widget-area > .widget ul li {
+    font-size: 0.9rem;
+  }
+
+  #secondary.widget-area > .widget form .search-field {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767.98px) and (min-width: 576px) {
+  /* Content page */
+  article .entry-header .entry-title {
+    font-size: 2rem;
+  }
+  article .entry-content p,
+  article .entry-content a,
+  article .entry-content span {
+    font-size: 0.9rem;
+  }
+
+  /* Widget main footer */
+  aside.footer-widget-area .wrapper > .widget-column {
+    width: 50%;
+  }
+
+  /* Widget sidebar*/
+  #secondary.widget-area > .widget {
+    width: 45%;
+    margin-right: 1rem;
+  }
+  #secondary.widget-area > .widget .widget-title {
+    font-size: 1.2rem;
+  }
+  #secondary.widget-area > .widget a,
+  #secondary.widget-area > .widget p,
+  #secondary.widget-area > .widget span,
+  #secondary.widget-area > .widget ul li {
+    font-size: 0.9rem;
   }
 }

@@ -19,7 +19,7 @@ function test_header_media_options( $wp_customize ) {
 			'sanitize_callback' => 'test_sanitize_select',
 			'choices'           => array(
 				'homepage'               => esc_html__( 'Página de inicio / Portada', 'test' ),
-				'entire-site'            => esc_html__( 'En todo el sitio', 'test' ),
+				// 'entire-site'            => esc_html__( 'En todo el sitio', 'test' ),
 				'disable'                => esc_html__( 'Deshabilitado', 'test' ),
 			),
 			'label'             => esc_html__( 'Activar en', 'test' ),
