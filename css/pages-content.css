@@ -18,13 +18,17 @@
   padding-top: 1.3rem;
 }
 
-.page-archive article .entry-header .entry-title a {
+.page-archive article .entry-header .entry-title a,
+.page-template article .entry-header .entry-title a {
   color: #404040;
 }
 
 .page-archive article .entry-header .entry-title a:hover,
 .page-archive article .entry-header .entry-title a:active,
-.page-archive article .entry-header .entry-title a:focus {
+.page-archive article .entry-header .entry-title a:focus,
+.page-template article .entry-header .entry-title a:hover,
+.page-template article .entry-header .entry-title a:active,
+.page-template article .entry-header .entry-title a:focus {
   text-decoration: underline wavy;
 }
 
@@ -58,7 +62,8 @@
   padding: 1.2rem 0;
 }
 
-.page-archive article .entry-footer a {
+.page-archive article .entry-footer a,
+.page-template article .entry-footer a {
   margin-right: 0.2rem;
   border-radius: 50px;
   font-size: 0.85rem;
@@ -75,10 +80,19 @@
 
 .page-archive article .entry-footer a:hover,
 .page-archive article .entry-footer a:active,
-.page-archive article .entry-footer a:focus {
+.page-archive article .entry-footer a:focus,
+.page-template article .entry-footer a:hover,
+.page-template article .entry-footer a:active,
+.page-template article .entry-footer a:focus {
   border: 1.5px solid #6439e0;
   background-color: #6439e0;
   color: white;
+}
+
+.page-archive > .page-header > .page-title {
+  background-color: #ebebeb;
+  padding: 1rem;
+  font-size: 0.98rem;
 }
 
 /* General configuration to card categories */
