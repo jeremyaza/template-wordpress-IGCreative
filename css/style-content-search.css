@@ -32,6 +32,7 @@ section .page-content form {
   align-items: center;
   justify-content: center;
   padding: 1.4rem 0;
+  width: 100%;
 }
 
 section .page-content form .search-field {
